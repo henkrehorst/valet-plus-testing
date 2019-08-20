@@ -14,11 +14,10 @@ steps:
 - task: CacheBeta@0
   inputs:
     key: Homebrew | $(Agent.OS) 
-    path: $HOME/Library/Caches/Homebrew 
+    path: /Users/vsts/Library/Caches/Homebrew
   displayName: Cache homebrew
 
 - script: |
-    brew --cache
     brew update
     brew tap henkrehorst/php
     brew install valet-php@7.2 --cache
