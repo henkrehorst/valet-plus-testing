@@ -15,4 +15,6 @@ steps:
 
 - script: |
     brew update
-  displayName: 'Test brew update'
+    brew tap henkrehorst/php
+    brew install valet-php@7.2
+  displayName: 'Test install time valet-php@7.2'
