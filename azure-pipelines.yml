@@ -14,9 +14,7 @@ steps:
 - task: CacheBeta@0
   inputs:
     key: hombrewcache-02 | $(Agent.OS) 
-    path: |
-     /Users/vsts/Library/Caches/Homebrew
-     /usr/local/Homebrew
+    path: /Users/vsts/Library/Caches/Homebrew
   displayName: Cache homebrew
 
 - script: |
