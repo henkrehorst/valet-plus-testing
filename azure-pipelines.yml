@@ -15,7 +15,13 @@ steps:
   inputs:
     key: hombrewcache-02 | $(Agent.OS) 
     path: /Users/vsts/Library/Caches/Homebrew
-  displayName: Cache homebrew
+  displayName: Cache homebrew downloads
+
+- task: CacheBeta@0
+  inputs:
+    key: hombrewcache-03 | $(Agent.OS) 
+    path: /Users/vsts/Library/Caches/Homebrew
+  displayName: Cache homebrew directory
 
 - script: |
     brew update
