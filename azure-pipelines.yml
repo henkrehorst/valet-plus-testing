@@ -13,8 +13,10 @@ steps:
 
 - task: CacheBeta@0
   inputs:
-    key: Homebrew | $(Agent.OS) 
-    path: /Users/vsts/Library/Caches/Homebrew
+    key: hombrewcache-02 | $(Agent.OS) 
+    path: |
+     /Users/vsts/Library/Caches/Homebrew
+     /usr/local/Homebrew
   displayName: Cache homebrew
 
 - script: |
