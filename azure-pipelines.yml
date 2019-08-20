@@ -10,17 +10,18 @@ pool:
   vmImage: 'macOS-10.14'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+
+- task: CacheBeta@0
+  inputs:
+    key: Homew | $(Agent.OS) | 
+    path: |
+     /usr/local/Homebrew
+     $HOME/Library/Caches/Homebrew 
+  displayName: Cache homebrew
 
 - script: |
     brew update
     brew tap henkrehorst/php
     brew install valet-php@7.2
     brew install composer
-    php -v
-    composer global require weprovide/valet-plus
-    export PATH="$PATH:$HOME/.composer/vendor/bin"
-    valet install
-    valet use 7.1
   displayName: 'Test install time valet-php@7.2'
